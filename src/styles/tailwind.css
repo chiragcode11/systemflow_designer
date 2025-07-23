@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #0a0a0a; /* Deep focus canvas */
+    --color-foreground: #ffffff; /* Clear primary content */
+    --color-surface: #1a1a1a; /* Elevated component backgrounds */
+    --color-card: #1a1a1a; /* gray-900 */
+    --color-card-foreground: #ffffff; /* white */
+    --color-popover: #1a1a1a; /* gray-900 */
+    --color-popover-foreground: #ffffff; /* white */
+    --color-muted: #262626; /* gray-800 */
+    --color-muted-foreground: #a3a3a3; /* gray-400 */
+    
+    /* Border and Input */
+    --color-border: #333333; /* gray-700 */
+    --color-input: #1a1a1a; /* gray-900 */
+    --color-ring: #00d4ff; /* cyan-400 */
+    
+    /* Brand Colors */
+    --color-primary: #00d4ff; /* Electric confidence for primary actions */
+    --color-primary-foreground: #0a0a0a; /* gray-950 */
+    --color-secondary: #8b5cf6; /* Premium intelligence for advanced features */
+    --color-secondary-foreground: #ffffff; /* white */
+    --color-accent: #00ff88; /* Success and completion moments */
+    --color-accent-foreground: #0a0a0a; /* gray-950 */
+    
+    /* Status Colors */
+    --color-success: #22c55e; /* Positive progress confirmation */
+    --color-success-foreground: #ffffff; /* white */
+    --color-warning: #f59e0b; /* Helpful guidance without alarm */
+    --color-warning-foreground: #ffffff; /* white */
+    --color-error: #ef4444; /* Clear problem identification */
+    --color-error-foreground: #ffffff; /* white */
+    --color-destructive: #ef4444; /* red-500 */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Additional Brand Colors */
+    --color-brand-orange: #ff6b35; /* Warm orange for CTAs */
+    --color-brand-orange-foreground: #ffffff; /* white */
+    --color-text-secondary: #a3a3a3; /* Supporting information hierarchy */
+    
+    /* Radius */
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    backdrop-filter: blur(20px);
+    background: rgba(26, 26, 26, 0.9);
+  }
+  
+  .brand-gradient {
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+  }
+  
+  .brand-shadow {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand-shadow-primary {
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+  }
+  
+  .brand-shadow-interactive {
+    box-shadow: 0 4px 16px rgba(0, 212, 255, 0.3);
+  }
+  
+  .text-brand-secondary {
+    color: var(--color-text-secondary);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 300ms ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 200ms ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 300ms ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
